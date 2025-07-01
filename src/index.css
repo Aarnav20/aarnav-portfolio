@@ -1,16 +1,18 @@
 /* src/index.css */
 
-/* Tailwind base styles */
+/* Import Tailwind's base styles */
 @tailwind base;
 
-/* Tailwind component styles */
+/* Import Tailwind's component styles */
 @tailwind components;
 
-/* Tailwind utility classes */
+/* Import Tailwind's utility classes */
 @tailwind utilities;
 
-/* Optional: Custom global styles (add only if you need them) */
+/* Optional: Custom global styles */
 body {
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  background-color: #f9fafb;
+  background-color: #f9fafb; /* Light gray background */
+  margin: 0;
+  padding: 0;
 }
