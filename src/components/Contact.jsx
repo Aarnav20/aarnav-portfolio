@@ -1,19 +1,17 @@
-// src/components/Contact.jsx
 import { motion } from 'framer-motion'
 
 export default function Contact() {
   return (
-    <motion.section
-      id="contact"
-      className="py-16 bg-white"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
-    >
-      <div className="container mx-auto px-4 max-w-2xl">
-        <h2 className="text-3xl font-bold mb-8 text-blue-700">Contact</h2>
-        <div className="bg-blue-50 rounded-lg p-8 shadow">
+    <section id="contact" className="py-16 bg-white">
+      <div className="max-w-2xl mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-10 text-blue-700">Contact</h2>
+        <motion.div
+          className="bg-blue-50 rounded-xl p-8 shadow-lg"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           <form className="space-y-6">
             <div>
               <label className="block text-blue-700 mb-1 font-semibold">Name</label>
@@ -37,8 +35,8 @@ export default function Contact() {
               <a href="https://github.com/YOUR-GITHUB" target="_blank" rel="noopener noreferrer" className="underline">GitHub</a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </motion.section>
+    </section>
   )
 }

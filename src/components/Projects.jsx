@@ -1,4 +1,3 @@
-// src/components/Projects.jsx
 import { motion } from 'framer-motion'
 
 const projects = [
@@ -23,19 +22,19 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-blue-700">Projects</h2>
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-10 text-blue-700">Projects</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
-              className="bg-blue-50 rounded-lg p-6 shadow hover:scale-105 transition"
+              className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 shadow-lg hover:scale-105 transition"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: idx * 0.2 }}
+              transition={{ duration: 0.7, delay: idx * 0.15 }}
             >
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-blue-800">{project.title}</h3>
               <p className="text-gray-700">{project.description}</p>
             </motion.div>
           ))}

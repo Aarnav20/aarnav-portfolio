@@ -1,4 +1,3 @@
-// src/components/Education.jsx
 import { motion } from 'framer-motion'
 
 const education = [
@@ -18,35 +17,31 @@ const education = [
 
 export default function Education() {
   return (
-    <motion.section
-      id="education"
-      className="py-16 bg-gray-50"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
-    >
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-blue-700">Education</h2>
-        <div className="space-y-8">
+    <section id="education" className="py-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-10 text-blue-700">Education</h2>
+        <div className="grid md:grid-cols-2 gap-8">
           {education.map((edu, idx) => (
-            <div key={idx} className="bg-white rounded-lg p-6 shadow">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                <div>
-                  <h3 className="text-xl font-semibold">{edu.degree}</h3>
-                  <span className="text-blue-500">{edu.institution}</span>
-                </div>
-                <span className="text-gray-500">{edu.period}</span>
-              </div>
+            <motion.div
+              key={idx}
+              className="bg-white rounded-xl p-6 shadow-lg"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: idx * 0.15 }}
+            >
+              <h3 className="text-xl font-semibold text-blue-800">{edu.degree}</h3>
+              <span className="text-blue-500">{edu.institution}</span>
+              <span className="block text-gray-500 mb-2">{edu.period}</span>
               <ul className="list-disc ml-5 text-gray-700 space-y-1">
                 {edu.details.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

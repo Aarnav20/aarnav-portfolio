@@ -1,41 +1,41 @@
-// src/components/Skills.jsx
 import { motion } from 'framer-motion'
 
 const skills = [
-  { category: "Programming Languages", items: ["Python", "JavaScript", "PHP", "SQL", "NoSQL"] },
-  { category: "Web Technologies", items: ["HTML", "CSS", "React.js", "Node.js", "RESTful APIs"] },
-  { category: "Frameworks & Libraries", items: ["TensorFlow", "PyTorch", "SciKit-Learn", "Express.js"] },
-  { category: "Testing Tools", items: ["Selenium IDE", "Eclipse", "JUnit", "Postman"] },
-  { category: "Methodologies", items: ["Agile", "Scrum", "SDLC", "STLC", "Unit Testing", "Regression Testing"] },
-  { category: "Databases", items: ["MongoDB", "MySQL"] },
-  { category: "Others", items: ["Data Preprocessing", "Data Visualization", "Machine Learning", "NLP"] }
+  { label: "Python", icon: "🐍" },
+  { label: "JavaScript", icon: "🟨" },
+  { label: "React.js", icon: "⚛️" },
+  { label: "Node.js", icon: "🟩" },
+  { label: "HTML", icon: "📄" },
+  { label: "CSS", icon: "🎨" },
+  { label: "TensorFlow", icon: "🔶" },
+  { label: "PyTorch", icon: "🔥" },
+  { label: "SQL", icon: "🗄️" },
+  { label: "MongoDB", icon: "🍃" },
+  { label: "Machine Learning", icon: "🤖" },
+  { label: "NLP", icon: "🗣️" }
 ]
 
 export default function Skills() {
   return (
-    <motion.section
-      id="skills"
-      className="py-16 bg-white"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
-    >
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-blue-700">Skills</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {skills.map((skill, idx) => (
-            <div key={idx}>
-              <h4 className="font-semibold text-blue-600 mb-2">{skill.category}</h4>
-              <ul className="flex flex-wrap gap-2">
-                {skill.items.map((item, i) => (
-                  <li key={i} className="bg-blue-50 text-blue-800 px-3 py-1 rounded-full text-sm">{item}</li>
-                ))}
-              </ul>
-            </div>
+    <section id="skills" className="py-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-10 text-blue-700">Skills</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {skills.map((skill, i) => (
+            <motion.div
+              key={i}
+              className="bg-white rounded-xl flex flex-col items-center p-6 shadow hover:shadow-xl transition"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+            >
+              <span className="text-3xl mb-2">{skill.icon}</span>
+              <span className="font-semibold text-blue-700">{skill.label}</span>
+            </motion.div>
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }
